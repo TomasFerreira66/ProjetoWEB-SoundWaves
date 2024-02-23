@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto PW</title>
+        <link rel="stylesheet" href="novomain.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+
+    <div class="container">
+       
+        
+        <div class="top">
+            
+          <div class="icon">
+            <div id="top-toolbar">
+             <div id="file">Select a file...</div>
+    
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+  
+          <audio id="audio"></audio>
+            <div class="controls">
+              <button id="play"><i class="fa-solid fa-play" style="color: black;"></i></button>
+              <button id="pause"><i class="fa-solid fa-pause" style="color: black;"></i></button>
+              <button id="stop"><i class="fa-solid fa-stop" style="color: black;"></i></button>             
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            <input type="range" id="timeline-slider" min="0" max="1" step="0.01" value="0">
+            <span id="time" style="color: white">0:00/0:00</span>
+      </div>
+        </div>
+
+        <div class="caixa">
+          <div class="lat"></div>
+          <div class="equ">
+            <canvas id="canvas_equ"></canvas>
+
+          </div>
+          <div class="caixa2">
+            <div class="middle" style="display: flex; justify-content: center; align-items: center;">
+              <marquee 
+                style="color:white; font-size: 30px;" 
+                id="file-name" 
+                direction="right" 
+                scrollamount="2"
+                scrolldelay="6"
+                truespeed="truespeed">
+              </marquee>
+            </div>
+            
+            <div class="caixa2_cima">
+              <div class="left"></div>
+
+              <div class="music_wave">
+
+                <canvas id="canvas_wave"></canvas>
+               
+
+              </div>
+            </div>
+            <div class="pianoArea">
+              <div class="bottom"></div>
+              <div class="Piano">
+                <button class="white-key C4-key"></button>
+                <button class="black-key Db4-key"></button>
+                <button class="white-key D4-key"></button>
+                <button class="black-key Eb4-key"></button>
+                <button class="white-key E4-key"></button>
+                <button class="white-key F4-key"></button>
+                <button class="black-key Gb4-key"></button>
+                <button class="white-key G4-key"></button>
+                <button class="black-key Ab4-key"></button>
+                <button class="white-key A4-key"></button>
+                <button class="black-key Bb4-key"></button>
+                <button class="white-key B4-key"></button>
+                <button class="white-key C5-key"></button>
+                <button class="black-key Db5-key"></button>
+                <button class="white-key D5-key"></button>
+                <button class="black-key Eb5-key"></button>
+                <button class="white-key E5-key"></button>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right_area1"></div>
+            <div class="right_area2"></div>
+            <div class="right_area3"></div>
+            <div class="right_area4"></div>
+          </div>
+        </div>
+       
+      </div>
+    
+      <script  src="testescript.js"></script>
+      <script src="pianoScript.js"></script>
+      <script src="butoes.js"></script>
+      <script src="clicar_muda_cor.js"></script>
+      
+</body>
+
+
+</html>

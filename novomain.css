@@ -1,0 +1,333 @@
+
+body {
+    background-color: black;
+    font-family: Arial;
+  }
+
+.container {  display: grid;
+    grid-template-rows: 46.4px 4.5fr 0.2fr;
+    grid-auto-columns: 1fr 2fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row dense;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .top {  display: grid;
+    border-top:    1px solid white;
+    border-left:  1px solid white; 
+    border-right: 1px solid white;
+    grid-template-columns: 0.1fr 1.9fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "icon .";
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  
+   .icon { grid-area: icon;
+      border-right: 1px solid white;
+  }
+  
+  .lat {
+    border-top:    1px solid white;
+    border-left:  1px solid white; 
+    border-bottom: 1px solid white;
+    grid-area: lat; }
+
+  .footer { 
+    border-right:    1px solid white;
+    border-left:  1px solid white; 
+    border-bottom: 1px solid white;
+    grid-area: 3 / 1 / 4 / 2; }
+  
+  .caixa {  display: grid;
+    grid-template-columns: 0.2fr 0.5fr 2.8fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "lat equ caixa2 right";
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  
+  .right { 
+    border: 1px solid white;
+    grid-template-columns: 1fr; 
+    
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "right_area1"
+    "right_area2"
+    "right_area3"
+    "right_area4"; 
+  grid-area: right;  }
+
+.right_area1 { 
+  grid-area: right_area1; 
+  height:25%;
+  background-color:lightslategray;
+}
+.right_area2 { 
+  grid-area: right_area2; 
+  
+  height:25%;
+  background-color:lightcoral;
+}
+.right_area3 { 
+  grid-area: right_area3; 
+ 
+  height:25%;
+  background-color:lightgreen;
+}
+.right_area4 { 
+ 
+  grid-area: right_area4; 
+  height:25%;
+  background-color:pink;
+}
+  
+  
+  .equ { grid-area: equ;
+   
+    border: 1px solid white;
+}
+  
+  .caixa2 {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.4fr 0.2fr 1.4fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "caixa2_cima"
+      "middle"
+      "pianoArea";
+    grid-area: caixa2;
+  }
+  
+  .middle { 
+    overflow: hidden;
+    color:#fff;
+    border: 1px solid white;
+    grid-area: middle; }
+  
+    #scroll-text {
+      margin:auto;
+      
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      
+      -webkit-animation: my-animation 120s linear infinite;
+      animation: my-animation 120s linear infinite;
+    }
+    
+    /* for Chrome */
+    @-webkit-keyframes my-animation {
+      from { -webkit-transform: translateX(100%); }
+      to { -webkit-transform: translateX(-100%); }
+    }
+
+    @keyframes my-animation {
+      from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+    }
+
+
+  .caixa2_cima {  display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "left music_wave";
+    grid-area: caixa2_cima;
+  }
+  
+  .left {
+    border:1px solid white;
+    grid-area: left; }
+    
+  
+  .music_wave { 
+    border-top: 1px solid white;
+    position:relative;
+    grid-area: music_wave; }
+  
+  .pianoArea {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.7fr 0.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Piano"
+      "bottom";
+    grid-area: pianoArea;
+  }
+  
+  .bottom { 
+    border-top:    1px solid white;
+    border-bottom: 1px solid white;
+    grid-area: bottom; }
+  
+    .Piano {
+      display: flex;
+      position: relative;
+      margin-left: 300px;
+      margin-top: 5px;
+     border:rgba(255, 0, 0, 0);
+    }
+
+    .white-key {
+      width: 80px;
+      height: 240px;
+      background-color: whitesmoke;
+      border: 4px solid black;
+      border-radius: 0 0 4px 4px;
+      margin-left: -4px;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .white-key.active {
+      background-color: #959191;
+    }
+    
+    .black-key {
+      position: absolute;
+      width: 48px;
+      height: 160px;
+      background-image: linear-gradient(#000000, #303030);
+      border: 3px solid black;
+      border-radius: 0 0 2px 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .black-key.active {
+      background-image: linear-gradient(#000000, #101010);
+    }
+    
+    .Db4-key {
+      left: 50px;
+    }
+    
+    .Eb4-key {
+      left: 131px;
+    }
+    
+    .Gb4-key {
+      left: 278px;
+    }
+    
+    .Ab4-key {
+      left: 354px;
+    }
+    
+    .Bb4-key {
+      left: 430px;
+    }
+    
+    .Db5-key {
+      left: 582px;
+    }
+    
+    .Eb5-key {
+      left: 658px;
+    }
+  
+
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    
+
+
+
+  div#top-toolbar {
+    z-index: 100;
+    text-align: center;
+    font-size: 1em;
+    position: fixed;
+    user-select: none;
+    opacity: 0.8;
+    transition: all 0.5s;
+
+    width: auto;
+  }
+
+  div#top-toolbar * {
+    display: inline-block;
+  }
+
+  div#top-toolbar div {
+    background-color: white;
+    height: 16px;
+    padding: 6px 10px;
+    font-size: 1em;
+    border-radius: 2px;
+    box-shadow: 0px 0px 1px 0px black;
+    cursor: pointer;
+  }
+  
+
+
+  #canvas_wave {
+    position: fixed;
+    width: 58%;
+  height: 40%;
+    
+    
+  }
+
+  #canvas_equ {
+    top:0;
+    height:90%;
+    position: fixed;
+    width: 12%;
+    
+    left: 6%;
+  }
+
+  audio {
+    border-radius: 1 !important;
+    position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  bottom: 1px;
+  }
+
+
+  video {
+    right: 1px;
+    top: 1px;
+    position: fixed;
+    border: 1px solid white;
+  }
+
+
+  html, body {
+    height: 99%;
+    
+  }
+
+  
